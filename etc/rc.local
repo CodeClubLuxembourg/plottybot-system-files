@@ -1,0 +1,5 @@
+#!/bin/sh -e
+/usr/bin/pigpiod
+rm /var/log/plottybot.stderr.log || true
+/usr/bin/screen -S plottybot -dm sh -c "/usr/local/bin/plottybot.py 2>/var/log/plottybot.stderr.log"
+exit 0
